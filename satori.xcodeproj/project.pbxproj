@@ -15,6 +15,7 @@
 		231163942292AF4A00E15F2A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231163932292AF4A00E15F2A /* ListViewController.swift */; };
 		231163982292B15600E15F2A /* Affirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231163972292B15600E15F2A /* Affirmation.swift */; };
 		234408FD229401A1005E218D /* ListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234408FC229401A1005E218D /* ListItemCell.swift */; };
+		EA33885E54C5E938722CBA75 /* Pods_satori.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7E97F3E94B98DA6C07B1549 /* Pods_satori.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,9 @@
 		231163932292AF4A00E15F2A /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		231163972292B15600E15F2A /* Affirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Affirmation.swift; sourceTree = "<group>"; };
 		234408FC229401A1005E218D /* ListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemCell.swift; sourceTree = "<group>"; };
+		87E6AC7CBAFC79250EC25110 /* Pods-satori.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-satori.debug.xcconfig"; path = "Target Support Files/Pods-satori/Pods-satori.debug.xcconfig"; sourceTree = "<group>"; };
+		A456C174C007D6615D88BF2A /* Pods-satori.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-satori.release.xcconfig"; path = "Target Support Files/Pods-satori/Pods-satori.release.xcconfig"; sourceTree = "<group>"; };
+		F7E97F3E94B98DA6C07B1549 /* Pods_satori.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_satori.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +39,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA33885E54C5E938722CBA75 /* Pods_satori.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		000A13FD9644F2D00B65A42C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F7E97F3E94B98DA6C07B1549 /* Pods_satori.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		231163752292AD5800E15F2A = {
 			isa = PBXGroup;
 			children = (
 				231163802292AD5800E15F2A /* satori */,
 				2311637F2292AD5800E15F2A /* Products */,
+				7363323C39F9E4820BDB04CB /* Pods */,
+				000A13FD9644F2D00B65A42C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,6 +104,16 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		7363323C39F9E4820BDB04CB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				87E6AC7CBAFC79250EC25110 /* Pods-satori.debug.xcconfig */,
+				A456C174C007D6615D88BF2A /* Pods-satori.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -96,9 +121,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 231163902292AD5A00E15F2A /* Build configuration list for PBXNativeTarget "satori" */;
 			buildPhases = (
+				AF8D899073D702AF00E47A4E /* [CP] Check Pods Manifest.lock */,
 				2311637A2292AD5800E15F2A /* Sources */,
 				2311637B2292AD5800E15F2A /* Frameworks */,
 				2311637C2292AD5800E15F2A /* Resources */,
+				62D1A8E778F4ADC26B162B32 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -155,6 +182,55 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		62D1A8E778F4ADC26B162B32 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-satori/Pods-satori-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-satori/Pods-satori-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF8D899073D702AF00E47A4E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-satori-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2311637A2292AD5800E15F2A /* Sources */ = {
@@ -309,6 +385,7 @@
 		};
 		231163912292AD5A00E15F2A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87E6AC7CBAFC79250EC25110 /* Pods-satori.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -328,6 +405,7 @@
 		};
 		231163922292AD5A00E15F2A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A456C174C007D6615D88BF2A /* Pods-satori.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

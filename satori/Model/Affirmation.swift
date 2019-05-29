@@ -7,7 +7,8 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct Affirmation {
-    var text : String = ""
+class Affirmation: Object {
+    @objc dynamic var text : String = ""
 }
