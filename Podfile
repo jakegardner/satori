@@ -7,5 +7,6 @@ target 'satori' do
 
   # Pods for satori
   pod 'RealmSwift'
+  pod 'SwipeCellKit'
 
 end

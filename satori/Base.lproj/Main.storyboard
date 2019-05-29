@@ -13,34 +13,19 @@
         <!--ListController-->
         <scene sceneID="Xae-cy-oUo">
             <objects>
-                <tableViewController title="ListController" id="kfd-3m-K28" customClass="ListViewController" customModule="affirm" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="ListController" id="kfd-3m-K28" customClass="ListViewController" customModule="satori" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="W99-gR-Ion">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListItemCell" id="T38-j2-3Kp" userLabel="ListItemCell" customClass="ListItemCell" customModule="affirm" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListItemCell" id="T38-j2-3Kp" userLabel="ListItemCell" customClass="SwipeTableViewCell" customModule="SwipeCellKit">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="T38-j2-3Kp" id="vn7-Ft-M8d">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7G-31-MaL">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="H7G-31-MaL" secondAttribute="trailing" id="Crr-MA-5VK"/>
-                                        <constraint firstItem="H7G-31-MaL" firstAttribute="leading" secondItem="vn7-Ft-M8d" secondAttribute="leading" id="RcB-WU-XLO"/>
-                                    </constraints>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="label" destination="H7G-31-MaL" id="6Wh-qD-xea"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -79,7 +64,7 @@
         <!--Add Item-->
         <scene sceneID="Pjm-mn-7SB">
             <objects>
-                <viewController id="xOT-Fy-dFY" customClass="AddItemController" customModule="affirm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xOT-Fy-dFY" customClass="AddItemController" customModule="satori" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fEd-Tt-fhl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

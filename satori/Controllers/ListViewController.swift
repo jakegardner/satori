@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import SwipeCellKit
 
 class ListViewController: UITableViewController, AddItemControllerDelegate {
 
@@ -43,8 +44,9 @@ class ListViewController: UITableViewController, AddItemControllerDelegate {
     // MARK - datasource methods
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ListItemCell", for: indexPath) as! ListItemCell
-        cell.label?.text = items?[indexPath.row].text
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ListItemCell", for: indexPath) as! SwipeTableViewCell
+        cell.delegate = self
+        cell.textLabel?.text = items?[indexPath.row].text
         return cell
     }
     
@@ -52,4 +54,31 @@ class ListViewController: UITableViewController, AddItemControllerDelegate {
         return items?.count ?? 1
     }
 
+}
+
+extension ListViewController: SwipeTableViewCellDelegate {
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        guard orientation == .right else { return nil }
+        
+        let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
+            if let item = self.items?[indexPath.row] {
+                do {
+                    try self.realm.write {
+                        self.realm.delete(item)
+                    }
+                } catch {
+                    print("error deleting item")
+                }
+            }
+        }
+        
+        return [deleteAction]
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeTableOptions {
+        var options = SwipeTableOptions()
+        options.expansionStyle = .destructive
+        options.transitionStyle = .border
+        return options
+    }
 }
