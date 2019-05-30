@@ -8,5 +8,6 @@ target 'satori' do
   # Pods for satori
   pod 'RealmSwift'
   pod 'SwipeCellKit'
+  pod 'Dollar'
 
 end

@@ -15,8 +15,20 @@
 		231163942292AF4A00E15F2A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231163932292AF4A00E15F2A /* ListViewController.swift */; };
 		231163982292B15600E15F2A /* Affirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231163972292B15600E15F2A /* Affirmation.swift */; };
 		234408FD229401A1005E218D /* ListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234408FC229401A1005E218D /* ListItemCell.swift */; };
+		23724979229FBCF20021F863 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23724978229FBCF20021F863 /* NotificationHelper.swift */; };
+		23E8123822DF001E00E02CFB /* satoriTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E8123722DF001E00E02CFB /* satoriTests.swift */; };
 		EA33885E54C5E938722CBA75 /* Pods_satori.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7E97F3E94B98DA6C07B1549 /* Pods_satori.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		23E8123A22DF001E00E02CFB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 231163762292AD5800E15F2A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2311637D2292AD5800E15F2A;
+			remoteInfo = satori;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2311637E2292AD5800E15F2A /* satori.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = satori.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -29,6 +41,10 @@
 		231163932292AF4A00E15F2A /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		231163972292B15600E15F2A /* Affirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Affirmation.swift; sourceTree = "<group>"; };
 		234408FC229401A1005E218D /* ListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemCell.swift; sourceTree = "<group>"; };
+		23724978229FBCF20021F863 /* NotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
+		23E8123522DF001E00E02CFB /* satoriTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = satoriTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		23E8123722DF001E00E02CFB /* satoriTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = satoriTests.swift; sourceTree = "<group>"; };
+		23E8123922DF001E00E02CFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87E6AC7CBAFC79250EC25110 /* Pods-satori.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-satori.debug.xcconfig"; path = "Target Support Files/Pods-satori/Pods-satori.debug.xcconfig"; sourceTree = "<group>"; };
 		A456C174C007D6615D88BF2A /* Pods-satori.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-satori.release.xcconfig"; path = "Target Support Files/Pods-satori/Pods-satori.release.xcconfig"; sourceTree = "<group>"; };
 		F7E97F3E94B98DA6C07B1549 /* Pods_satori.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_satori.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +56,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA33885E54C5E938722CBA75 /* Pods_satori.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23E8123222DF001E00E02CFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				231163802292AD5800E15F2A /* satori */,
+				23E8123622DF001E00E02CFB /* satoriTests */,
 				2311637F2292AD5800E15F2A /* Products */,
 				7363323C39F9E4820BDB04CB /* Pods */,
 				000A13FD9644F2D00B65A42C /* Frameworks */,
@@ -68,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				2311637E2292AD5800E15F2A /* satori.app */,
+				23E8123522DF001E00E02CFB /* satoriTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -75,13 +100,14 @@
 		231163802292AD5800E15F2A /* satori */ = {
 			isa = PBXGroup;
 			children = (
+				23724977229FBCD00021F863 /* Helpers */,
 				231163962292B12300E15F2A /* Model */,
 				231163952292B11C00E15F2A /* Controllers */,
 				231163812292AD5800E15F2A /* AppDelegate.swift */,
 				231163852292AD5800E15F2A /* Main.storyboard */,
 				231163882292AD5A00E15F2A /* Assets.xcassets */,
-				2311638A2292AD5A00E15F2A /* LaunchScreen.storyboard */,
 				2311638D2292AD5A00E15F2A /* Info.plist */,
+				2311638A2292AD5A00E15F2A /* LaunchScreen.storyboard */,
 			);
 			path = satori;
 			sourceTree = "<group>";
@@ -104,13 +130,29 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		23724977229FBCD00021F863 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				23724978229FBCF20021F863 /* NotificationHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		23E8123622DF001E00E02CFB /* satoriTests */ = {
+			isa = PBXGroup;
+			children = (
+				23E8123722DF001E00E02CFB /* satoriTests.swift */,
+				23E8123922DF001E00E02CFB /* Info.plist */,
+			);
+			path = satoriTests;
+			sourceTree = "<group>";
+		};
 		7363323C39F9E4820BDB04CB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				87E6AC7CBAFC79250EC25110 /* Pods-satori.debug.xcconfig */,
 				A456C174C007D6615D88BF2A /* Pods-satori.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -136,19 +178,41 @@
 			productReference = 2311637E2292AD5800E15F2A /* satori.app */;
 			productType = "com.apple.product-type.application";
 		};
+		23E8123422DF001E00E02CFB /* satoriTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 23E8123E22DF001E00E02CFB /* Build configuration list for PBXNativeTarget "satoriTests" */;
+			buildPhases = (
+				23E8123122DF001E00E02CFB /* Sources */,
+				23E8123222DF001E00E02CFB /* Frameworks */,
+				23E8123322DF001E00E02CFB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				23E8123B22DF001E00E02CFB /* PBXTargetDependency */,
+			);
+			name = satoriTests;
+			productName = satoriTests;
+			productReference = 23E8123522DF001E00E02CFB /* satoriTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		231163762292AD5800E15F2A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1010;
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Jake C Gardner";
 				TargetAttributes = {
 					2311637D2292AD5800E15F2A = {
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1020;
+					};
+					23E8123422DF001E00E02CFB = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 2311637D2292AD5800E15F2A;
 					};
 				};
 			};
@@ -166,6 +230,7 @@
 			projectRoot = "";
 			targets = (
 				2311637D2292AD5800E15F2A /* satori */,
+				23E8123422DF001E00E02CFB /* satoriTests */,
 			);
 		};
 /* End PBXProject section */
@@ -181,6 +246,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		23E8123322DF001E00E02CFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -193,6 +265,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-satori/Pods-satori-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Dollar/Dollar.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework",
@@ -201,6 +274,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Dollar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeCellKit.framework",
@@ -239,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23724979229FBCF20021F863 /* NotificationHelper.swift in Sources */,
 				231163982292B15600E15F2A /* Affirmation.swift in Sources */,
 				231163842292AD5800E15F2A /* AddItemController.swift in Sources */,
 				234408FD229401A1005E218D /* ListItemCell.swift in Sources */,
@@ -247,7 +322,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		23E8123122DF001E00E02CFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23E8123822DF001E00E02CFB /* satoriTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		23E8123B22DF001E00E02CFB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2311637D2292AD5800E15F2A /* satori */;
+			targetProxy = 23E8123A22DF001E00E02CFB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		231163852292AD5800E15F2A /* Main.storyboard */ = {
@@ -425,6 +516,48 @@
 			};
 			name = Release;
 		};
+		23E8123C22DF001E00E02CFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8GS784CHJ3;
+				INFOPLIST_FILE = satoriTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jakecgardner.satoriTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/satori.app/satori";
+			};
+			name = Debug;
+		};
+		23E8123D22DF001E00E02CFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8GS784CHJ3;
+				INFOPLIST_FILE = satoriTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jakecgardner.satoriTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/satori.app/satori";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -442,6 +575,15 @@
 			buildConfigurations = (
 				231163912292AD5A00E15F2A /* Debug */,
 				231163922292AD5A00E15F2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		23E8123E22DF001E00E02CFB /* Build configuration list for PBXNativeTarget "satoriTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23E8123C22DF001E00E02CFB /* Debug */,
+				23E8123D22DF001E00E02CFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

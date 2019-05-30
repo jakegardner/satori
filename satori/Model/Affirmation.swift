@@ -11,4 +11,5 @@ import RealmSwift
 
 class Affirmation: Object {
     @objc dynamic var text : String = ""
+    @objc dynamic var uuid : String = UUID().uuidString
 }

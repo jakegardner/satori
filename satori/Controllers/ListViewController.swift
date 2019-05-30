@@ -9,8 +9,9 @@
 import UIKit
 import RealmSwift
 import SwipeCellKit
+import UserNotifications
 
-class ListViewController: UITableViewController, AddItemControllerDelegate {
+class ListViewController: UITableViewController, AddItemControllerDelegate, UNUserNotificationCenterDelegate {
 
     let realm = try! Realm()
     var items: Results<Affirmation>?
@@ -35,6 +36,7 @@ class ListViewController: UITableViewController, AddItemControllerDelegate {
             try realm.write {
                 realm.add(newItem)
             }
+            self.updateUserNotifications()
         } catch {
             print("error saving context")
         }
@@ -53,7 +55,21 @@ class ListViewController: UITableViewController, AddItemControllerDelegate {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items?.count ?? 1
     }
+    
+    func updateUserNotifications() {
+        NotificationHelper.app.removeNotifications()
+        let notifications = NotificationHelper.app.createScheduleForItems(items: Array(items!))
+        NotificationHelper.app.createNotifications(items: notifications)
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        
+        completionHandler([.alert, .sound])
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
 
+    }
 }
 
 extension ListViewController: SwipeTableViewCellDelegate {
@@ -66,6 +82,7 @@ extension ListViewController: SwipeTableViewCellDelegate {
                     try self.realm.write {
                         self.realm.delete(item)
                     }
+                    self.updateUserNotifications()
                 } catch {
                     print("error deleting item")
                 }
