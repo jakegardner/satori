@@ -23,6 +23,8 @@ class AddItemController: UIViewController, UITextFieldDelegate  {
         super.viewDidLoad()
         
         itemText.delegate = self
+        itemText.becomeFirstResponder()
+        
         saveItemButton.isEnabled = false
     }
 
