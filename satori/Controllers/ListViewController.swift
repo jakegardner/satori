@@ -11,6 +11,10 @@ import RealmSwift
 import SwipeCellKit
 import UserNotifications
 
+class CustomSwipeTableCell: SwipeTableViewCell {
+    @IBOutlet weak var cellLabel: UILabel!
+}
+
 class ListViewController: UITableViewController, AddItemControllerDelegate, UNUserNotificationCenterDelegate {
 
     let realm = try! Realm()
@@ -20,6 +24,7 @@ class ListViewController: UITableViewController, AddItemControllerDelegate, UNUs
         super.viewDidLoad()
         items = realm.objects(Affirmation.self)
         tableView.reloadData()
+        tableView.tableFooterView = UIView(frame: .zero)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -46,9 +51,9 @@ class ListViewController: UITableViewController, AddItemControllerDelegate, UNUs
     // MARK - datasource methods
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ListItemCell", for: indexPath) as! SwipeTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ListItemCell", for: indexPath) as! CustomSwipeTableCell
         cell.delegate = self
-        cell.textLabel?.text = items?[indexPath.row].text
+        cell.cellLabel.text = items?[indexPath.row].text
         return cell
     }
     

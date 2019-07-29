@@ -16,7 +16,8 @@ protocol AddItemControllerDelegate
 class AddItemController: UIViewController, UITextFieldDelegate  {
 
     @IBOutlet weak var itemText: UITextField!
-    @IBOutlet weak var saveItemButton: UIButton!
+    @IBOutlet weak var createBtn: UIButton!
+    
     var addItemDelegate: AddItemControllerDelegate?
     
     override func viewDidLoad() {
@@ -25,18 +26,22 @@ class AddItemController: UIViewController, UITextFieldDelegate  {
         itemText.delegate = self
         itemText.becomeFirstResponder()
         
-        saveItemButton.isEnabled = false
+        createBtn.isEnabled = false
     }
 
     func saveNewItem(itemText: String) {
         if (itemText.count > 0) {
             addItemDelegate?.onSaveItem(itemText: itemText)
         }
-        self.navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
     }
 
-    @IBAction func onSaveButtonClick(_ sender: Any) {
-        saveNewItem(itemText: self.itemText.text!)
+    @IBAction func onCreateItem(_ sender: Any) {
+        saveNewItem(itemText: itemText.text!)
+    }
+    
+    @IBAction func closeModal(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -44,12 +49,12 @@ class AddItemController: UIViewController, UITextFieldDelegate  {
     }
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        saveItemButton.isEnabled = true
+        createBtn.isEnabled = true
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         if !self.itemText.hasText {
-            saveItemButton.isEnabled = false
+            createBtn.isEnabled = false
         }
     }
 
