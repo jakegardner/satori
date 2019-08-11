@@ -66,7 +66,11 @@ class NotificationHelper {
                 for (timeIndex, item) in daySet.enumerated() {
                     var dc = defaultTimes[timeIndex]
                     dc.day = dayIndex + 1
-                    let request = createNotificationRequest(id: item.uuid, text: item.text, dateComponent: dc)
+                    let request = createNotificationRequest(
+                        id: "\(item.uuid)-\(dayIndex)\(timeIndex)",
+                        text: item.text,
+                        dateComponent: dc
+                    )
                     requests.append(request)
                 }
             }
